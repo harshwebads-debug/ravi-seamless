@@ -1517,157 +1517,176 @@ ul {
 
 
 
- /* -----------------------------------------------------------
+/* -----------------------------------------------------------
        OWNER ARTICLE & AWARDS SECTION (WHITE THEME)
     ----------------------------------------------------------- */
+.awards-section {
+    position: relative;
+    padding: 100px 0;
+    /* background-color: #ffffff; */
+    background: url(../images/backgrounds/9495910.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #111;
+    /* Dark text for contrast */
+    overflow: hidden;
+}
+
+.container-awards {
+    position: relative;
+    z-index: 2;
+}
+
+/* Section Header (Dark Text) */
+.awards-header-small {
+    color: #FF6B00;
+    /* Orange Accent */
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.awards-heading {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.4rem;
+    color: var(--primary);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.awards-desc {
+    color: var(--text-main);
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 100%;
+    /* Full width availability */
+}
+
+/* LEFT SIDE: Article Image Frame */
+.article-frame {
+    position: relative;
+    padding: 20px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+    max-width: 90%;
+    /* Ensure it fits nicely within 50% */
+    margin-left: auto;
+    /* Center/Align nicely */
+    margin-right: auto;
+}
+
+.article-frame:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.article-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(20%);
+    /* Slight vintage feel for newspaper */
+}
+
+/* RIGHT SIDE: Awards Grid */
+.awards-grid {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.award-item {
+    flex: 1;
+    text-align: center;
+    background: #f9f9f9;
+    padding: 8px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.award-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    border-color: #FF6B00;
+}
+
+.award-img {
+    /* height: 120px; */
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 20px;
+    /* Placeholder styling */
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+}
+
+.award-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.award-sub {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Button Dark */
+.btn-dark-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 35px;
+    background: transparent;
+    color: #111;
+    border: 2px solid #111;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 40px;
+}
+
+.btn-dark-outline:hover {
+    background: #111;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
     .awards-section {
-        position: relative;
-        padding: 100px 0;
-        /* background-color: #ffffff; */
-        background: url(../images/backgrounds/9495910.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        color: #111; /* Dark text for contrast */
-        overflow: hidden;
-    }
-
-    .container-awards {
-        position: relative;
-        z-index: 2;
-    }
-
-    /* Section Header (Dark Text) */
-    .awards-header-small {
-        color: #FF6B00; /* Orange Accent */
-        font-family: 'Manrope', sans-serif;
-        font-size: 0.9rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        font-weight: 700;
-        display: block;
-        margin-bottom: 20px;
+        padding: 60px 0;
     }
 
     .awards-heading {
-        font-family: 'Syne', sans-serif;
-        font-size: 2.4rem;
-        color: var(--primary);
-        font-weight: 800;
-        line-height: 1.2;
-        margin-bottom: 30px;
+        font-size: 2.2rem;
     }
 
-    .awards-desc {
-        color: var(--text-main);
-        font-family: 'Manrope', sans-serif;
-        font-size: 1.1rem;
-        line-height: 1.8;
-        margin-bottom: 40px;
-        max-width: 100%; /* Full width availability */
-    }
-
-    /* LEFT SIDE: Article Image Frame */
     .article-frame {
-        position: relative;
-        padding: 20px;
-        background: #f5f5f5;
-        border: 1px solid #ddd;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        transform: rotate(-2deg);
-        transition: transform 0.3s ease;
-        margin-bottom: 30px;
-        max-width: 90%; /* Ensure it fits nicely within 50% */
-        margin-left: auto; /* Center/Align nicely */
-        margin-right: auto;
+        margin-bottom: 50px;
+        transform: rotate(0);
+        max-width: 100%;
     }
 
-    .article-frame:hover {
-        transform: rotate(0deg) scale(1.02);
-    }
-
-    .article-img {
-        width: 100%;
-        height: auto;
-        display: block;
-        filter: grayscale(20%); /* Slight vintage feel for newspaper */
-    }
-
-    /* RIGHT SIDE: Awards Grid */
     .awards-grid {
-        display: flex;
-        gap: 30px;
-        margin-top: 20px;
+        flex-direction: column;
     }
-
-    .award-item {
-        flex: 1;
-        text-align: center;
-        background: #f9f9f9;
-        padding: 8px;
-        border: 1px solid #eee;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-    }
-
-    .award-item:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-        border-color: #FF6B00;
-    }
-
-    .award-img {
-        /* height: 120px; */
-        width: 100%;
-        object-fit: contain;
-        margin-bottom: 20px;
-        /* Placeholder styling */
-        filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
-    }
-
-    .award-title {
-        font-family: 'Syne', sans-serif;
-        font-size: 1.1rem;
-        font-weight: 700;
-        color: #222;
-        margin-bottom: 5px;
-    }
-
-    .award-sub {
-        font-size: 0.85rem;
-        color: #777;
-    }
-
-    /* Button Dark */
-    .btn-dark-outline {
-        display: inline-flex;
-        align-items: center;
-        padding: 15px 35px;
-        background: transparent;
-        color: #111;
-        border: 2px solid #111;
-        font-family: 'Syne', sans-serif;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        margin-top: 40px;
-    }
-
-    .btn-dark-outline:hover {
-        background: #111;
-        color: #fff;
-    }
-
-    /* Responsive */
-    @media (max-width: 991px) {
-        .awards-section { padding: 60px 0; }
-        .awards-heading { font-size: 2.2rem; }
-        .article-frame { margin-bottom: 50px; transform: rotate(0); max-width: 100%; }
-        .awards-grid { flex-direction: column; }
-    }
+}
 
 
 
@@ -1888,5 +1907,363 @@ ul {
 
     .ind-name {
         font-size: 1.2rem;
+    }
+}
+
+
+
+/* -----------------------------------------------------------
+           PROCESS SECTION STYLES
+        ----------------------------------------------------------- */
+.process-section-luxury {
+    padding: 120px 0;
+    position: relative;
+    background-color: #020202;
+    overflow: hidden;
+}
+
+/* Container */
+.containerrr {
+    max-width: 1400px;
+    /* Increased Max Width for wider feel */
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* 1. Header & Intro Content (WIDENED & CENTERED) */
+.proc-header {
+    text-align: center;
+    margin-bottom: 100px;
+    width: 100%;
+    /* Use full available width */
+    max-width: 1200px;
+    /* Allow it to grow wider */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.proc-sub {
+    color: var(--primary);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.proc-title {
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    /* Increased size for impact */
+    color: white;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 35px;
+}
+
+.proc-title span {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+    position: relative;
+}
+
+/* Optional Glow for Title */
+.proc-title span::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.proc-intro-text {
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    /* Larger readable text */
+    line-height: 1.7;
+    margin-bottom: 50px;
+    max-width: 950px;
+    /* Much wider constraint */
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300;
+}
+
+/* 2. Process Grid */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    position: relative;
+}
+
+/* Flow Line Connector (Desktop) */
+.process-grid::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    /* Aligns with numbers */
+    left: 50px;
+    right: 50px;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 215, 0, 0.3),
+            rgba(255, 215, 0, 0.3),
+            transparent);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* 3. LUXURY IMAGE CARD STYLES */
+.proc-card {
+    position: relative;
+    height: 550px;
+    /* Taller cards */
+    border-radius: 4px;
+    /* Sharper corners for industrial look */
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    background: #050505;
+}
+
+/* Background Image */
+.proc-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+    filter: grayscale(100%) brightness(0.4);
+    /* Darker initial state */
+    z-index: 0;
+}
+
+/* Overlay Gradient */
+.proc-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-dark);
+    z-index: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Content Wrapper */
+.proc-card-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Align content to bottom */
+    align-items: flex-start;
+    border-top: 3px solid transparent;
+    transition: all 0.4s ease;
+}
+
+/* Step Number */
+.proc-num {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.05);
+    /* Very subtle watermark */
+    line-height: 1;
+    transition: all 0.5s ease;
+    z-index: 2;
+    /* Add outline */
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Icon */
+.proc-icon-box {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 25px;
+    transform: translateY(0);
+    transition: transform 0.5s ease, color 0.3s ease;
+    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Title */
+.proc-step-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: translateY(0);
+    transition: transform 0.5s ease;
+}
+
+/* Description */
+.proc-desc {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    opacity: 0;
+    /* Hidden initially */
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    max-height: 0;
+    overflow: hidden;
+    border-left: 2px solid var(--primary);
+    padding-left: 15px;
+}
+
+/* ---------------------------------------------
+           HOVER ANIMATIONS
+        --------------------------------------------- */
+.proc-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    transform: translateY(-10px);
+    z-index: 10;
+}
+
+.proc-card:hover .proc-card-bg {
+    transform: scale(1.1);
+    /* Zoom In */
+    filter: grayscale(0%) brightness(0.6);
+    /* Colorize but keep moody */
+}
+
+.proc-card:hover .proc-card-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2));
+}
+
+.proc-card:hover .proc-num {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--primary);
+    opacity: 0.3;
+    transform: scale(1.05);
+}
+
+.proc-card:hover .proc-icon-box {
+    transform: translateY(-10px);
+    color: #fff;
+    text-shadow: 0 0 15px var(--primary);
+}
+
+.proc-card:hover .proc-step-title {
+    transform: translateY(-10px);
+    color: var(--primary);
+}
+
+.proc-card:hover .proc-desc {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 200px;
+    /* Reveal Text */
+    margin-bottom: 10px;
+}
+
+/* Decorative Line above active card */
+.proc-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    z-index: 5;
+    transition: width 0.4s ease;
+}
+
+.proc-card:hover::before {
+    width: 100%;
+}
+
+/* Background Kinetic Text (Made Bigger) */
+.proc-bg-text {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 18vw;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.02);
+    white-space: nowrap;
+    z-index: 0;
+    pointer-events: none;
+    letter-spacing: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .proc-title {
+        font-size: 3.5rem;
+    }
+
+    .process-grid::before {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .proc-card {
+        height: 450px;
+    }
+
+    /* On mobile/tablet, show text partly visible */
+    .proc-desc {
+        max-height: 150px;
+        opacity: 0.7;
+        transform: translateY(0);
+        margin-bottom: 10px;
+    }
+
+    .proc-header {
+        margin-bottom: 60px;
+        padding: 0 10px;
+    }
+
+    .proc-intro-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .proc-title {
+        font-size: 2.5rem;
     }
 }
