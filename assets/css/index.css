@@ -52,6 +52,195 @@ ul {
     margin: 0;
 }
 
+
+.rv-sticky-bar {
+    position: fixed;
+    top: 70%;
+    right: 20px;
+    /* Thoda space diya hai taaki float kare */
+    transform: translateY(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Vertical Line Connector (Optional Visual Element) */
+.rv-sticky-bar::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--primary), transparent);
+    z-index: -1;
+}
+
+.rv-sticky-btn {
+    width: 60px;
+    height: 60px;
+    background: var(--glass-dark);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--text-muted);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFD700;
+    /* Gold Icon initially */
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    /* Shine ke liye zaroori */
+}
+
+/* --- SHINE EFFECT (SHEEN) --- */
+.rv-sticky-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    transition: 0.5s;
+    transform: skewX(-25deg);
+}
+
+/* --- HOVER EFFECTS --- */
+.rv-sticky-btn:hover {
+    background: var(--primary);
+    /* Pura Gold ho jayega */
+    border-color: #FFD700;
+    color: #000;
+    /* Icon Black ho jayega Contrast ke liye */
+    transform: scale(1.15) rotate(5deg);
+    /* Thoda Twist */
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+    /* Massive Glow */
+}
+
+.rv-sticky-btn:hover::before {
+    left: 150%;
+    /* Shine pass hogi */
+    transition: 0.7s;
+}
+
+/* --- TOOLTIP STYLING --- */
+.rv-tooltip {
+    position: absolute;
+    right: 80px;
+    background: #000;
+    /* Pure Black */
+    color: #FFD700;
+    /* Gold Text */
+    padding: 8px 15px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid var(--gold-border);
+    border-radius: 4px;
+    /* Sharp Edges */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(15px) scale(0.9);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    font-family: 'Syne', sans-serif;
+    /* Your Heading Font */
+}
+
+/* Tooltip Arrow */
+.rv-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -6px;
+    transform: translateY(-50%);
+    border-width: 6px 0 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--gold-border);
+}
+
+.rv-sticky-btn:hover .rv-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1);
+}
+
+/* --- SPECIAL PULSE FOR WHATSAPP --- */
+.rv-pulse {
+    animation: luxury-pulse 3s infinite;
+}
+
+@keyframes luxury-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 15px rgba(255, 215, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+    }
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    .rv-sticky-bar {
+        top: auto;
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+        flex-direction: row;
+        background: rgba(0, 0, 0, 0.9);
+        border: 1px solid rgba(255, 215, 0, 0.2);
+        padding: 12px 25px;
+        border-radius: 50px;
+        gap: 20px;
+        width: max-content;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Hide vertical line on mobile */
+    .rv-sticky-bar::before {
+        display: none;
+    }
+
+    .rv-sticky-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.4rem;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        color: #FFD700;
+    }
+
+    .rv-sticky-btn:hover {
+        background: transparent;
+        color: #fff;
+        transform: scale(1.2);
+        box-shadow: none;
+    }
+
+    /* Disable tooltip on mobile */
+    .rv-tooltip {
+        display: none;
+    }
+}
+
 /* -----------------------------------------------------------
            NAVBAR (Existing Approved Design)
         ----------------------------------------------------------- */
@@ -2265,5 +2454,867 @@ ul {
 
     .proc-title {
         font-size: 2.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+/* -----------------------------------------------------------
+           SECTION STYLES
+        ----------------------------------------------------------- */
+.rv-t-section {
+    padding: 80px 0;
+    background-color: var(--bg-body);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Abstract Line Background */
+.rv-t-bg-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(90deg,
+            rgba(255, 255, 255, 0.03) 0px,
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px,
+            transparent 100px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.rv-t-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* HEADER */
+.rv-t-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 20px;
+}
+
+.rv-t-header-text {
+    max-width: 600px;
+}
+
+.rv-t-sub {
+    color: var(--primary);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.rv-t-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.1;
+}
+
+/* Navigation Buttons (Desktop) */
+.rv-t-nav-wrapper {
+    display: flex;
+    gap: 15px;
+}
+
+.rv-t-nav-btn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--border-light);
+    background: transparent;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1.2rem;
+}
+
+.rv-t-nav-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(255, 215, 0, 0.05);
+}
+
+/* -----------------------------------------------------------
+           CARD STYLES
+        ----------------------------------------------------------- */
+.rv-t-swiper {
+    width: 100%;
+    padding: 10px;
+    /* Slight padding for shadows */
+}
+
+/* Custom Wrapper Class Styles */
+.rv-t-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+}
+
+/* Custom Slide Class Styles */
+.rv-t-slide {
+    height: auto;
+    flex-shrink: 0;
+    width: 100%;
+    position: relative;
+    transition-property: transform;
+    display: block;
+}
+
+.rv-t-card {
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    padding: 25px;
+    /* Reduced padding from 30px */
+    height: 100%;
+    /* min-height removed to fix gap issue */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.4s ease;
+    border-radius: 4px;
+}
+
+.rv-t-card:hover {
+    background: var(--surface-hover);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Gold Top Bar on Hover */
+.rv-t-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.4s ease;
+}
+
+.rv-t-card:hover::before {
+    width: 100%;
+}
+
+/* Content */
+.rv-t-quote-icon {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    /* Reduced from 20px */
+    opacity: 0.8;
+}
+
+.rv-t-review {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    /* Reduced from 30px */
+    /* flex-grow: 1; REMOVED to fix big gap issue */
+}
+
+/* Author Footer */
+.rv-t-footer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    /* Softer border */
+    padding-top: 15px;
+    /* Reduced from 20px */
+    margin-top: auto;
+    /* Keeps footer aligned at bottom if needed, or remove for tight fit */
+}
+
+.rv-t-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--primary);
+}
+
+.rv-t-info h4 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 2px;
+    font-weight: 700;
+}
+
+.rv-t-info p {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* -----------------------------------------------------------
+           RESPONSIVE STYLES
+        ----------------------------------------------------------- */
+@media (max-width: 991px) {
+    .rv-t-title {
+        font-size: 2.2rem;
+    }
+
+    .rv-t-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .rv-t-nav-wrapper {
+        display: none;
+        /* Hide custom buttons, use dots */
+    }
+}
+
+@media (max-width: 768px) {
+    .rv-t-section {
+        padding: 60px 0;
+    }
+
+    .rv-t-card {
+        padding: 20px;
+    }
+
+    .rv-t-title {
+        font-size: 1.8rem;
+    }
+
+    .rv-t-pagination {
+        position: relative !important;
+        bottom: 0 !important;
+        margin-top: 20px;
+        display: block !important;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* Swiper Pagination Customization - Targeting Custom Class */
+.rv-t-pagination .swiper-pagination-bullet {
+    background: #444;
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+    display: inline-block;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.rv-t-pagination .swiper-pagination-bullet-active {
+    background: var(--primary);
+    width: 20px;
+    border-radius: 5px;
+    transition: width 0.3s;
+}
+
+
+
+
+/* -----------------------------------------------------------
+           CONTACT SECTION STYLES
+        ----------------------------------------------------------- */
+.rv-contact-section {
+    padding: 70px 0;
+    background-color: var(--bg-body);
+    position: relative;
+    overflow: hidden;
+    min-height: 900px;
+    /* Tall section */
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--primary);
+}
+
+/* Background Visuals */
+.rv-contact-bg-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 69, 0, 0.08) 0%, transparent 70%);
+    top: -10%;
+    right: -10%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.rv-contact-bg-lines {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.3;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.rv-contact-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.rv-contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+/* -----------------------------------------------------------
+           LEFT SIDE: INFO & MAP
+        ----------------------------------------------------------- */
+.rv-contact-info-col {
+    padding-top: 20px;
+}
+
+.rv-contact-sub {
+    color: var(--primary);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.rv-contact-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 40px;
+}
+
+.rv-contact-desc {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 50px;
+    max-width: 500px;
+}
+
+/* Info Grid */
+.rv-info-grid {
+    display: grid;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.rv-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.rv-info-icon-box {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.rv-info-item:hover .rv-info-icon-box {
+    background: var(--primary);
+    color: #000;
+    transform: rotate(45deg);
+}
+
+.rv-info-content h4 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.rv-info-content p,
+.rv-info-content a {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.rv-info-content a:hover {
+    color: var(--primary);
+}
+
+/* Abstract Map Visual (CSS Only) */
+.rv-map-visual {
+    width: 100%;
+    height: 250px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2f/World_map_blank_black.png');
+    /* Simple dark map */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    filter: invert(1) opacity(0.5);
+    /* Adjust to look ghostly white/grey on black */
+    border-radius: 4px;
+    border: 1px solid var(--border-light);
+    position: relative;
+}
+
+/* Hotspot Dots */
+.rv-map-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--secondary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--secondary);
+    animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 69, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 69, 0, 0);
+    }
+}
+
+/* -----------------------------------------------------------
+           RIGHT SIDE: FORM
+        ----------------------------------------------------------- */
+.rv-contact-form-col {
+    position: relative;
+}
+
+.rv-form-card {
+    background: var(--glass-surface);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-light);
+    padding: 60px;
+    border-radius: 0;
+    /* Sharp industrial edges */
+    position: relative;
+}
+
+/* Gold Corner Accent */
+.rv-form-card::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, transparent 50%, var(--primary) 50%);
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.rv-form-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.rv-input-group {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.rv-input-field {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px 0;
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.rv-input-label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    color: var(--text-muted);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+}
+
+/* Focus State */
+.rv-input-field:focus,
+.rv-input-field:valid {
+    border-bottom-color: var(--primary);
+}
+
+.rv-input-field:focus~.rv-input-label,
+.rv-input-field:valid~.rv-input-label {
+    top: -10px;
+    font-size: 0.8rem;
+    color: var(--primary);
+}
+
+/* Submit Button */
+.rv-submit-btn {
+    background: var(--primary);
+    color: #000;
+    border: none;
+    padding: 20px 50px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 95% 100%, 0 100%);
+}
+
+.rv-submit-btn:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+/* -----------------------------------------------------------
+           RESPONSIVE
+        ----------------------------------------------------------- */
+@media (max-width: 991px) {
+    .rv-contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .rv-contact-title {
+        font-size: 3rem;
+    }
+
+    .rv-form-card {
+        padding: 40px 30px;
+    }
+
+    .rv-map-visual {
+        display: none;
+        /* Hide map on mobile if too cluttered */
+    }
+}
+
+@media (max-width: 576px) {
+    .rv-contact-title {
+        font-size: 2.5rem;
+    }
+
+    .rv-contact-section {
+        padding: 60px 0;
+    }
+}
+
+
+
+
+
+
+/* -----------------------------------------------------------
+           FOOTER STYLES
+        ----------------------------------------------------------- */
+.rv-footer {
+    /* Background Image with Dark Overlay */
+    background-image: linear-gradient(to top, rgba(2, 2, 2, 0.95), rgba(2, 2, 2, 0.85)), url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2000&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    border-top: 1px solid var(--border-dark);
+    padding: 80px 0 30px;
+    position: relative;
+    font-family: var(--font-body);
+}
+
+/* Container */
+.rv-footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Top Grid */
+.rv-footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+/* Column Styles */
+.rv-footer-col h4 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 1. Brand Column */
+.rv-footer-logo {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.rv-footer-logo span {
+    color: var(--primary);
+}
+
+.rv-footer-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    max-width: 350px;
+}
+
+/* Social Icons */
+.rv-social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.rv-social-icon {
+    width: 45px;
+    height: 45px;
+    border: 1px solid var(--border-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.rv-social-icon:hover {
+    background: var(--primary);
+    color: #000;
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+/* 2 & 3. Links Columns */
+.rv-footer-links {
+    list-style: none;
+}
+
+.rv-footer-links li {
+    margin-bottom: 15px;
+}
+
+.rv-footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 0;
+}
+
+.rv-footer-links a:hover {
+    color: var(--primary);
+    padding-left: 10px;
+    /* Slight slide effect */
+}
+
+.rv-footer-links a::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: var(--primary);
+}
+
+.rv-footer-links a:hover::before {
+    opacity: 1;
+    left: -15px;
+    /* Adjust based on padding */
+}
+
+/* 4. Newsletter Column */
+.rv-newsletter-box {
+    position: relative;
+}
+
+.rv-news-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.rv-news-form {
+    position: relative;
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.rv-news-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 15px 0;
+    color: #fff;
+    outline: none;
+    font-family: var(--font-body);
+}
+
+.rv-news-btn {
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.rv-news-btn:hover {
+    transform: translateX(5px);
+}
+
+/* Divider */
+.rv-footer-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-dark), transparent);
+    margin-bottom: 30px;
+}
+
+/* Bottom Row */
+.rv-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.rv-footer-legal {
+    display: flex;
+    gap: 30px;
+}
+
+.rv-footer-legal a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.rv-footer-legal a:hover {
+    color: var(--primary);
+}
+
+/* Scroll To Top Button */
+.rv-scroll-top {
+    position: absolute;
+    right: 40px;
+    top: -25px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 100%, 0 100%, 0% 25%);
+}
+
+.rv-scroll-top:hover {
+    background: #fff;
+    transform: translateY(-5px);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .rv-footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .rv-footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rv-footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .rv-scroll-top {
+        right: 20px;
     }
 }
