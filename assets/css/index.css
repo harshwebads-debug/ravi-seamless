@@ -53,6 +53,32 @@ ul {
 }
 
 
+.fixed-sticker {
+    position: fixed;
+    bottom: 10px;
+    /* bottom se thoda upar */
+    left: 20px;
+    /* right side */
+    width: 130px;
+    /* size tu apne hisaab se adjust kar sakta hai */
+    z-index: 9999;
+    /* taaki sabke upar dikhe */
+    cursor: pointer;
+}
+
+
+@media(max-width:550px) {
+
+    .fixed-sticker {
+        display: none;
+    }
+
+}
+
+
+
+
+
 .rv-sticky-bar {
     position: fixed;
     top: 70%;
