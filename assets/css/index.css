@@ -1436,12 +1436,12 @@ ul {
 /* Square Arrows with Gold Border */
 .swiper-button-next,
 .swiper-button-prev {
-    color: #FFD700;
+    color: #FFD700 !important;
     /* Gold Icon */
     background: transparent;
     width: 60px;
     height: 60px;
-    border: 1px solid rgba(255, 215, 0, 0.3);
+    border: 1px solid  #FFD700 !important;
     /* Thin Gold Border */
     border-radius: 0;
     /* Square for industrial feel */
@@ -1449,11 +1449,14 @@ ul {
     z-index: 20;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     opacity: 1;
+    padding: 5px;
+    top: 30% !important;
+    padding: 30px !important;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-    background: #FFD700;
+    background: #f8f8f8;
     color: #000;
     box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
     transform: scale(1.05);
