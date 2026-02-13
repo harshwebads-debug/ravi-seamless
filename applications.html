@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stainless Steel Pipes ERW-NB Pipes</title>
+    <title>Applications</title>
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- custom css -->
     <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="assets/css/product.css">
     <!-- favicon -->
     <link rel="shortcut icon" href="assets/images/logo/rsp-logo.png" type="image/x-icon">
     <!-- Google Fonts -->
@@ -25,17 +24,270 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
 
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        /* -----------------------------------------------------------
+           ROOT VARIABLES - ULTRA LUXURY THEME
+        ----------------------------------------------------------- */
+        :root {
+            /* Backgrounds */
+            --bg-body: #020202;
+            /* Pure Dark */
+            --glass-bg: rgba(20, 20, 20, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.08);
+
+            /* Brand Colors (Vibrant Industrial) */
+            --primary: #FFD700;
+            /* Gold Yellow */
+            --primary-glow: rgba(255, 215, 0, 0.5);
+            --secondary: #FF4500;
+            /* Molten Orange */
+
+            /* Text Colors */
+            --text-main: #ffffff;
+            --text-muted: #aaaaaa;
+
+            /* Fonts */
+            --font-heading: 'Syne', sans-serif;
+            --font-body: 'Manrope', sans-serif;
+
+            /* Animation */
+            --ease-lux: cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .rv-container {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 40px;
+            /* Increased default padding */
+            position: relative;
+            z-index: 2;
+        }
+
+        /* -----------------------------------------------------------
+           1. HERO SECTION (Updated Minimal Design)
+        ----------------------------------------------------------- */
+        .rv-cert-hero {
+            min-height: 50vh;
+            /* Compact height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background-color: #050505;
+            overflow: hidden;
+        }
+
+        .rv-cert-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), #020202), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            z-index: 0;
+            filter: grayscale(100%) contrast(1.1);
+        }
+
+        .rv-cert-hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        /* Font Size Adjusted to Perfect Size */
+        .rv-cert-hero-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            /* Perfect balanced size */
+            line-height: 1.2;
+            font-weight: 800;
+            /* color: var(--primary); */
+            margin-bottom: 0;
+            opacity: 0;
+            animation: rv-fade-up 0.8s ease forwards 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            /* margin-top: 20px; */
+        }
+
+        .rv-cert-hero-title span {
+            color: var(--primary);
+            /* -webkit-text-stroke: 1px var(--primary); */
+        }
+
+        @keyframes rv-fade-up {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+
+        .rv-cert-header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--primary);
+            display: inline-block;
+        }
+
+        .rv-cert-title {
+            text-transform: uppercase;
+            font-size: 2.5rem;
+        }
+
+
+        /* -----------------------------------------------------------
+           INDUSTRIES GRID SECTION
+        ----------------------------------------------------------- */
+        .rv-ind-section {
+            padding: 100px 0;
+            background-color: var(--bg-body);
+            position: relative;
+        }
+
+        /* Header */
+        .rv-ind-header {
+            margin-bottom: 60px;
+            /* text-align: center; Optional: keep left if screenshot was left */
+        }
+
+        .rv-ind-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 15px;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .rv-ind-desc {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        /* Grid Layout */
+        .rv-ind-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 Columns */
+            gap: 40px 25px;
+            /* Vertical Gap 40px, Horizontal 25px */
+        }
+
+        /* Industry Item (Simple Style) */
+        .rv-ind-item {
+            display: flex;
+            flex-direction: column;
+            group: cursor-pointer;
+        }
+
+        /* Image Box */
+        .rv-ind-img-box {
+            width: 100%;
+            height: 280px;
+            /* Rectangular landscape ratio */
+            overflow: hidden;
+            /* border-radius: 4px; */
+            margin-bottom: 15px;
+            position: relative;
+            background: #111;
+
+        }
+
+        .rv-ind-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease, filter 0.3s;
+            filter: grayscale(30%);
+        }
+
+        /* Hover Effects */
+        .rv-ind-item:hover .rv-ind-img {
+            transform: scale(1.1);
+            filter: grayscale(0%);
+        }
+
+        /* Title Style (Clean below image) */
+        .rv-ind-name {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: #ccc;
+            /* Light Grey text */
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .rv-ind-item:hover .rv-ind-name {
+            color: var(--primary);
+            /* Gold on hover */
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .rv-ind-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 991px) {
+            .rv-ind-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .rv-ind-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .rv-ind-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+
 </head>
 
 <body>
 
 
-
     <!-- Sticker HTML -->
     <img src="assets/images/logo/freepik__img1-as-the-given-image-make-yellow-dress-up-inste__7978.png" alt="Sticker"
         class="fixed-sticker">
-
-
 
     <!-- HTML STRUCTURE -->
     <div class="rv-sticky-bar">
@@ -162,222 +414,184 @@
 
 
 
-
-    <!-- 1. HERO SECTION -->
-    <section class="rv-prod-hero">
-        <div class="rv-prod-bg"></div>
+    <!-- HERO SECTION -->
+    <header class="rv-cert-hero">
+        <div class="rv-cert-hero-bg"></div>
         <div class="rv-container">
-            <div class="rv-hero-container-flex"> <!-- Helper for flex layout -->
-                <div class="rv-prod-content">
-                    <span class="rv-breadcrumb">Products / Stainless Steel</span>
-                    <h1 class="rv-prod-title">Stainless Steel <br> Pipes (ERW NB)</h1>
-                    <p class="rv-prod-desc">
-                        Manufactured with precision, our ERW NB stainless steel pipes provide excellent corrosion
-                        resistance
-                        and mechanical strength, making them ideal for high-pressure industrial and commercial
-                        applications.
-                    </p>
-                    <a href="#contact" class="rv-enquire-btn">Get a Quote <i class="ri-arrow-right-line"></i></a>
+            <div class="rv-cert-hero-content">
+                <h1 class="rv-cert-hero-title">Applications</h1>
+            </div>
+        </div>
+    </header>
+
+    <section class="rv-ind-section">
+        <div class="rv-container">
+
+            <!-- Header -->
+            <div class="rv-ind-header">
+                <h2 class="rv-ind-title">Industries <span style="color: #FFD700;"> We Serve </span></h2>
+                <p class="rv-ind-desc">
+                    We continue to serve fabricators, OEMs, EPC contractors, and infrastructure developers with the
+                    quality they trust.
+                </p>
+            </div>
+
+            <!-- Grid -->
+            <div class="rv-ind-grid">
+
+                <!-- 1 -->
+                <div class="rv-ind-item">
+                    <div class="rv-ind-img-box">
+                        <img src="assets/images/applications/pharmaceuticals.jpeg"
+                            alt="Pharmaceuticals" class="rv-ind-img">
+                    </div>
+                    <h3 class="rv-ind-name">Pharmaceuticals</h3>
                 </div>
+
+                <!-- 2 -->
+                <div class="rv-ind-item">
+                    <div class="rv-ind-img-box">
+                        <img src="assets/images/applications/chemical-plants.jpeg"
+                            alt="Chemical Plants" class="rv-ind-img">
+                    </div>
+                    <h3 class="rv-ind-name">Chemical Plants</h3>
+                </div>
+
+                <!-- 3 -->
+                <div class="rv-ind-item">
+                    <div class="rv-ind-img-box">
+                        <img src="assets/images/applications/sugar-industries.jpeg"
+                            alt="Sugar Industries" class="rv-ind-img">
+                    </div>
+                    <h3 class="rv-ind-name">Sugar Industries</h3>
+                </div>
+
+                <!-- 4 -->
+                <div class="rv-ind-item">
+                    <div class="rv-ind-img-box">
+                        <img src="assets/images/applications/rice-mill-plants.jpg"
+                            alt="Rice Mill Plants" class="rv-ind-img">
+                    </div>
+                    <h3 class="rv-ind-name">Rice Mill Plants</h3>
+                </div>
+
+                <!-- 5 -->
+                <div class="rv-ind-item">
+                    <div class="rv-ind-img-box">
+                        <img src="assets/images/applications/paper-mill-industries.jpg"
+                            alt="Paper Mill Industries" class="rv-ind-img">
+                    </div>
+                    <h3 class="rv-ind-name">Paper Mill Industries</h3>
+                </div>
+
+                <!-- 6 -->
+                <div class="rv-ind-item">
+                    <div class="rv-ind-img-box">
+                        <img src="assets/images/applications/dairies-food-products.jpg"
+                            alt="Dairies & Food Products" class="rv-ind-img">
+                    </div>
+                    <h3 class="rv-ind-name">Dairies & Food Products</h3>
+                </div>
+
+                <!-- 7 -->
+                <div class="rv-ind-item">
+                    <div class="rv-ind-img-box">
+                        <img src="assets/images/applications/railway-coaches.jpg"
+                            alt="Railway Coaches" class="rv-ind-img">
+                    </div>
+                    <h3 class="rv-ind-name">Railway Coaches</h3>
+                </div>
+
+                <!-- 8 -->
+                <div class="rv-ind-item">
+                    <div class="rv-ind-img-box">
+                        <img src="assets/images/applications/steel-furniture.jpg"
+                            alt="Steel Furniture" class="rv-ind-img">
+                    </div>
+                    <h3 class="rv-ind-name">Steel Furniture</h3>
+                </div>
+
+                <!-- 9 -->
+                <div class="rv-ind-item">
+                    <div class="rv-ind-img-box">
+                        <img src="assets/images/applications/railings.jpg"
+                            alt="Railings" class="rv-ind-img">
+                    </div>
+                    <h3 class="rv-ind-name">Railings</h3>
+                </div>
+
+                <!-- 10 -->
+                <div class="rv-ind-item">
+                    <div class="rv-ind-img-box">
+                        <img src="assets/images/applications/furniture-interior-fxtures.jpg"
+                            alt="Furniture & Interior Fixtures" class="rv-ind-img">
+                    </div>
+                    <h3 class="rv-ind-name">Furniture & Interior Fixtures</h3>
+                </div>
+
+                <!-- 11 -->
+                <div class="rv-ind-item">
+                    <div class="rv-ind-img-box">
+                        <img src="assets/images/applications/architectural-structures.jpg"
+                            alt="Architectural Structures" class="rv-ind-img">
+                    </div>
+                    <h3 class="rv-ind-name">Architectural Structures</h3>
+                </div>
+
+                <!-- 12 -->
+                <div class="rv-ind-item">
+                    <div class="rv-ind-img-box">
+                        <img src="assets/images/applications/elevators.jpg"
+                            alt="Elevators" class="rv-ind-img">
+                    </div>
+                    <h3 class="rv-ind-name">Elevators</h3>
+                </div>
+
+                <!-- 13 -->
+                <div class="rv-ind-item">
+                    <div class="rv-ind-img-box">
+                        <img src="assets/images/applications/barricades-handles.jpg"
+                            alt="Barricades & Handles" class="rv-ind-img">
+                    </div>
+                    <h3 class="rv-ind-name">Barricades & Handles</h3>
+                </div>
+
+                <!-- 14 -->
+                <div class="rv-ind-item">
+                    <div class="rv-ind-img-box">
+                        <img src="assets/images/applications/automobile-machinery.jpg"
+                            alt="Automobile & Machinery" class="rv-ind-img">
+                    </div>
+                    <h3 class="rv-ind-name">Automobile & Machinery</h3>
+                </div>
+
+                <!-- 15 -->
+                <div class="rv-ind-item">
+                    <div class="rv-ind-img-box">
+                        <img src="assets/images/applications/decorative.jpg"
+                            alt="Decorative" class="rv-ind-img">
+                    </div>
+                    <h3 class="rv-ind-name">Decorative</h3>
+                </div>
+
+                <!-- 16 -->
+                <div class="rv-ind-item">
+                    <div class="rv-ind-img-box">
+                        <img src="assets/images/applications/machinery-equipment.jpg"
+                            alt="Machinery & Equipment" class="rv-ind-img">
+                    </div>
+                    <h3 class="rv-ind-name">Machinery & Equipment</h3>
+                </div>
+
             </div>
         </div>
     </section>
 
 
-    <!-- 2. PRODUCT OVERVIEW SECTION -->
-    <section class="rv-overview-section">
-        <div class="rv-container">
-            <div class="rv-overview-wrapper">
-
-                <!-- Left: Image with Frame -->
-                <div class="rv-overview-img-box">
-                    <div class="rv-overview-frame"></div>
-                    <!-- Using a distinct high-quality pipe image -->
-                    <img src="assets/images/products/ss-pipes-erw-nb.jpeg" alt="Stainless Steel ERW NB Pipes"
-                        class="rv-overview-img">
-                </div>
-
-                <!-- Right: Content & Features -->
-                <div class="rv-overview-content">
-                    <span class="rv-overview-sub">Premium Grade</span>
-                    <h2 class="rv-overview-title">Precision Engineered & Reliable</h2>
-                    <p class="rv-overview-text">
-                        Ravi Seamless ERW NB Stainless Steel Pipes are crafted from high-quality steel sourced from
-                        trusted
-                        suppliers. Advanced Electric Resistance Welding (ERW) ensures uniform wall thickness, smooth
-                        surface
-                        finish, and high dimensional accuracy, making them suitable for critical industrial pipelines
-                        and
-                        fluid transport systems.
-                    </p>
-
-                    <div class="rv-check-list">
-                        <div class="rv-check-item">
-                            <div class="rv-check-icon"><i class="ri-check-line"></i></div>
-                            <span>Uniform Wall Thickness</span>
-                        </div>
-                        <div class="rv-check-item">
-                            <div class="rv-check-icon"><i class="ri-shield-check-line"></i></div>
-                            <span>Excellent Corrosion Resistance</span>
-                        </div>
-                        <div class="rv-check-item">
-                            <div class="rv-check-icon"><i class="ri-fire-line"></i></div>
-                            <span>High Temperature Tolerance</span>
-                        </div>
-                        <div class="rv-check-item">
-                            <div class="rv-check-icon"><i class="ri-ruler-2-line"></i></div>
-                            <span>Precision Dimensional Control</span>
-                        </div>
-                    </div>
-
-                    <a href="#enquire" class="rv-solid-btn">Enquire Now <i class="ri-send-plane-fill"></i></a>
-                </div>
-
-            </div>
-        </div>
-    </section>
 
 
-    <!-- 3. SPECIFICATIONS SECTION -->
-    <section class="rv-specs-section">
-        <div class="rv-container">
-            <div class="rv-section-head">
-                <h2 class="rv-head-title">Technical Specifications</h2>
-            </div>
-
-            <table class="rv-spec-table">
-                <tr>
-                    <th>Product Standard</th>
-                    <td>ASTM A312, A213 | ASME SA312, SA213</td>
-                </tr>
-                <tr>
-                    <th>Grades</th>
-                    <td>304, 304L, 316, 316L, 310S, 321, 347H</td>
-                </tr>
-                <tr>
-                    <th>Size Range</th>
-                    <td>6mm OD to 219.08mm OD (1/4" NB to 8" NB)</td>
-                </tr>
-                <tr>
-                    <th>Wall Thickness</th>
-                    <td>0.5mm to 12.70mm (Sch 5S to Sch XXS)</td>
-                </tr>
-                <tr>
-                    <th>Length</th>
-                    <td>Single Random, Double Random & Cut Length (Up to 24 Meters)</td>
-                </tr>
-                <tr>
-                    <th>Finish</th>
-                    <td>Pickled, Polished, Solution Annealed (Mirror/Matte Options)</td>
-                </tr>
-            </table>
-        </div>
-    </section>
 
 
-    <!-- 4. FEATURES SECTION (PREMIUM CARD STYLE) -->
-    <section class="rv-features-section">
-        <div class="rv-container">
-            <div class="rv-features-head">
-                <span class="rv-features-sub">Why Choose Us</span>
-                <h2 class="rv-features-title">Engineered Advantage</h2>
-            </div>
-
-            <div class="rv-feat-grid">
-                <!-- Feature 1 -->
-                <div class="rv-feat-card-pro">
-                    <div class="rv-feat-icon-pro">
-                        <i class="ri-drop-line"></i>
-                    </div>
-                    <h3 class="rv-feat-title-pro">Corrosion Resistant</h3>
-                    <p class="rv-feat-text-pro">ERW NB Pipes are crafted from premium stainless steel, offering superior
-                        resistance
-                        to rust and chemical corrosion, ensuring durability in industrial pipelines.</p>
-                </div>
-
-                <!-- Feature 2 -->
-                <div class="rv-feat-card-pro">
-                    <div class="rv-feat-icon-pro">
-                        <i class="ri-fire-line"></i>
-                    </div>
-                    <h3 class="rv-feat-title-pro">High Temperature Tolerance</h3>
-                    <p class="rv-feat-text-pro">Maintains mechanical strength and stability under high-temperature
-                        conditions,
-                        suitable for boilers, heat exchangers, and other industrial applications.</p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="rv-feat-card-pro">
-                    <div class="rv-feat-icon-pro">
-                        <i class="ri-shield-check-line"></i>
-                    </div>
-                    <h3 class="rv-feat-title-pro">Precision & Strength</h3>
-                    <p class="rv-feat-text-pro">Electric Resistance Welded construction ensures uniform thickness and
-                        dimensional accuracy, delivering reliable performance for high-pressure pipelines.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- 5. APPLICATIONS SECTION (UNIVERSAL 4-CARDS) -->
-    <section class="rv-apps-section">
-        <div class="rv-container">
-            <div class="rv-apps-header">
-                <span class="rv-features-sub">Industries</span>
-                <h2 class="rv-apps-title">Where Our Stainless Steel Products Serve</h2>
-            </div>
-
-            <div class="rv-apps-grid-pro">
-
-                <!-- App 1 -->
-                <div class="rv-app-card-pro">
-                    <img src="https://www.prepol.com/wp-content/uploads/2024/08/downstream-1200x800-1.jpg"
-                        class="rv-app-img-pro" alt="Oil & Gas">
-                    <div class="rv-app-overlay-pro">
-                        <h4 class="rv-app-title-pro">Oil & Gas</h4>
-                        <p class="rv-app-desc-pro">Pipes and tubes for pipelines, refineries, and offshore installations
-                            where corrosion resistance and strength are critical.</p>
-                    </div>
-                </div>
-
-                <!-- App 2 -->
-                <div class="rv-app-card-pro">
-                    <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=600&auto=format&fit=crop"
-                        class="rv-app-img-pro" alt="Chemical & Pharma">
-                    <div class="rv-app-overlay-pro">
-                        <h4 class="rv-app-title-pro">Chemical & Pharma</h4>
-                        <p class="rv-app-desc-pro">High-quality stainless steel for reactors, pipelines, and sanitary
-                            applications in chemical and pharmaceutical industries.</p>
-                    </div>
-                </div>
-
-                <!-- App 3 -->
-                <div class="rv-app-card-pro">
-                    <img src="https://uniasen.com/wp-content/uploads/2025/10/What-are-Boiler-Pipes-1.webp"
-                        class="rv-app-img-pro" alt="Power & Energy">
-                    <div class="rv-app-overlay-pro">
-                        <h4 class="rv-app-title-pro">Power & Energy</h4>
-                        <p class="rv-app-desc-pro">Boilers, turbines, heat exchangers, and high-temperature pipelines
-                            benefit from durable stainless steel solutions.</p>
-                    </div>
-                </div>
-
-                <!-- App 4 -->
-                <div class="rv-app-card-pro">
-                    <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?q=80&w=600&auto=format&fit=crop"
-                        class="rv-app-img-pro" alt="Construction & Marine">
-                    <div class="rv-app-overlay-pro">
-                        <h4 class="rv-app-title-pro">Construction & Marine</h4>
-                        <p class="rv-app-desc-pro">Structural pipes, tubes, and fittings for infrastructure,
-                            shipbuilding, and marine applications, ensuring longevity and corrosion resistance.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
 
 
 
